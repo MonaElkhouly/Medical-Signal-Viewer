@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-panel {
+    width: 20%;
+    background: #f0f0f0;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.middle-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel {
+    width: 20%;
+    background: #e8e8e8;
+}
+
+.channel-view {
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: 70%;
+    background: black;
+}
+
+.controls {
+    margin-top: 10px;
+}
