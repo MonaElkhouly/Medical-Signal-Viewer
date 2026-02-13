@@ -2,7 +2,7 @@ import wfdb
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Full path to the record (no pn_dir)
+# Full path to the record 
 record_path = r"M:\Dataset\mit-bih-arrhythmia-database-1.0.0\100"
 
 # Load record
