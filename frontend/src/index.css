@@ -1,0 +1,190 @@
+/* ===== Layout ===== */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row; /* dashboard style */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Root container */
+#root {
+  display: flex;
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Left panel: plots */
+.left-panel {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Right panel: controls and AI card */
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===== Plot & card containers ===== */
+.plot-container, .card, .ai-card, .control-panel {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.plot-container:hover, .card:hover, .ai-card:hover, .control-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* ===== Buttons ===== */
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.7em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== Dropdowns / Multi-select ===== */
+select {
+  border-radius: 8px;
+  border: 1px solid #555;
+  padding: 0.5em 0.8em;
+  background-color: #2c2c3e;
+  color: #fff;
+  margin: 0.5em 0;
+  width: 100%;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+select:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* Multi-select specific */
+select[multiple] {
+  height: auto;
+  min-height: 80px;
+}
+
+/* Option styling for dropdowns */
+option {
+  padding: 0.4em;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* ===== Inputs ===== */
+input[type="file"] {
+  border-radius: 8px;
+  border: 1px solid #555;
+  padding: 0.5em;
+  background-color: #2c2c3e;
+  color: #fff;
+  margin: 0.5em 0;
+  width: 100%;
+  transition: all 0.25s ease;
+}
+input[type="file"]:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* ===== Headers ===== */
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0.3em 0;
+  color: var(--text-color);
+  text-align: left; /* align to left */
+}
+
+/* ===== Text ===== */
+p {
+  color: var(--secondary-color);
+  text-align: left;
+}
+
+/* ===== Media Queries for Light Mode ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #f2f3f7;
+    --text-color: #213547;
+    --accent-color: #646cff;
+    --secondary-color: #555;
+    --card-bg: #ffffff;
+    --button-bg: #e5e5f0;
+    --button-hover: #535bf2;
+  }
+}
+
+
+/* Normal dropdown styling */
+select {
+  border-radius: 6px;
+  border: 1px solid #555;
+  padding: 0.4em 0.6em;
+  background-color: #2c2c3e;
+  color: #fff;
+  font-size: 0.95em;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Normal dropdown for dark mode */
+select {
+  border-radius: 6px;
+  border: 1px solid #555;
+  padding: 0.5em 0.7em;
+  background-color: #2c2c3e; /* dark background */
+  color: #fff;               /* light text */
+  font-size: 0.95em;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+select:hover {
+  border-color: #646cff;
+  box-shadow: 0 0 6px #646cff66;
+}
+
+option {
+  background-color: #2c2c3e;
+  color: #fff;
+}
+
+/* Multi-select dropdown (optional) */
+select[multiple] {
+  height: auto;      /* default collapsed size */
+  min-height: 40px;
+  overflow-y: auto;
+}
+
+
